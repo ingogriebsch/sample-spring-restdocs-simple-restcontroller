@@ -1,0 +1,86 @@
+[[endpoints]]
+== Endpoints
+
+=== Find all available books
+A `GET` request returning all available books.
+
+==== Path pattern
+*GET /books*
+
+==== Request headers
+include::{snippets}/book/find-all/request-headers.adoc[]
+
+==== Response payload
+The response payload represents an array of objects of type <<resources-book,book>>.
+
+==== Response headers
+include::{snippets}/book/find-all/response-headers.adoc[]
+
+==== Example request
+include::{snippets}/book/find-all/http-request.adoc[]
+
+==== Example response
+include::{snippets}/book/find-all/http-response.adoc[]
+
+=== Find a specific book
+A `GET` request returning a specific book.
+
+==== Path pattern
+*GET /books/{isbn}*
+
+==== Path parameters
+include::{snippets}/book/find-one/path-parameters.adoc[]
+
+==== Request headers
+include::{snippets}/book/find-one/request-headers.adoc[]
+
+==== Response payload
+The response payload represents an object of type <<resources-book,book>>.
+
+==== Response headers
+include::{snippets}/book/find-one/response-headers.adoc[]
+
+==== Example request
+include::{snippets}/book/find-one/http-request.adoc[]
+
+==== Example response
+include::{snippets}/book/find-one/http-response.adoc[]
+
+=== Insert a new book
+A `POST` request inserting a new book.
+
+==== Path pattern
+*POST /books*
+
+==== Request payload
+The request payload represents an object of type <<resources-book-insert,book-insert>>.
+
+==== Request headers
+include::{snippets}/book/insert/request-headers.adoc[]
+
+==== Response payload
+The response payload represents an object of type <<resources-book,book>>.
+
+==== Response headers
+include::{snippets}/book/insert/response-headers.adoc[]
+
+==== Example request
+include::{snippets}/book/insert/http-request.adoc[]
+
+==== Example response
+include::{snippets}/book/insert/http-response.adoc[]
+
+=== Delete an existing book
+A `DELETE` request deleting an existing book.
+
+==== Path pattern
+*DELETE /books/{isbn}*
+
+==== Path parameters
+include::{snippets}/book/delete/path-parameters.adoc[]
+
+==== Example request
+include::{snippets}/book/delete/http-request.adoc[]
+
+==== Example response
+include::{snippets}/book/delete/http-response.adoc[]

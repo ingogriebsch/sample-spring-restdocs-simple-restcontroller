@@ -1,0 +1,12 @@
+[[resources]]
+== Resources
+
+[[resources-book-insert]]
+=== Book insert
+
+include::{snippets}/book/book-insert-resource/request-fields.adoc[]
+
+[[resources-book]]
+=== Book
+
+include::{snippets}/book/book-resource/response-fields.adoc[]

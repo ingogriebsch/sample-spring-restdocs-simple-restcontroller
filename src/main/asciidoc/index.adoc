@@ -1,0 +1,13 @@
+= Spring REST Docs simple REST controller sample
+:author: Ingo Griebsch
+:revnumber: {project-version}
+:toc: left
+:toclevels: 2
+:sectanchors:
+:sectlinks:
+
+[preface]
+= Introduction
+This sample shows you how to implement document a simple REST controller with Spring REST Docs (and Spring Boot).
+
+include::api-doc.adoc[]
