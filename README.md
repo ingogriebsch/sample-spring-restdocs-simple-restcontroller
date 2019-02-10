@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ingogriebsch/sample-spring-restdocs-simple-restcontroller.svg?branch=master)](https://travis-ci.org/ingogriebsch/sample-spring-restdocs-simple-restcontroller)
 [![Codecov Status](https://codecov.io/gh/ingogriebsch/sample-spring-restdocs-simple-restcontroller/branch/master/graph/badge.svg)](https://codecov.io/gh/ingogriebsch/sample-spring-restdocs-simple-restcontroller)
 [![Coveralls Status](https://coveralls.io/repos/github/ingogriebsch/sample-spring-restdocs-simple-restcontroller/badge.svg?branch=master)](https://coveralls.io/github/ingogriebsch/sample-spring-restdocs-simple-restcontroller?branch=master)
-[![Codacy Status](https://api.codacy.com/project/badge/Grade/XYZ)](https://app.codacy.com/app/ingo.griebsch/sample-spring-restdocs-simple-restcontroller?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-restdocs-simple-restcontroller&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Status](https://api.codacy.com/project/badge/Grade/932a7d3670e64310a345db7df8db6305)](https://app.codacy.com/app/ingo.griebsch/sample-spring-restdocs-simple-restcontroller?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-restdocs-simple-restcontroller&utm_campaign=Badge_Grade_Dashboard)
 [![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-restdocs-simple-restcontroller/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
