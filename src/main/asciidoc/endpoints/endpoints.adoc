@@ -2,10 +2,10 @@
 == Endpoints
 
 === Find all available books
-A `GET` request returning all available books.
+A GET request returning all available books.
 
 ==== Method and path
-*GET /books*
+GET /books
 
 ==== Request headers
 include::{snippets}/book/find-all/request-headers.adoc[]
@@ -23,10 +23,10 @@ include::{snippets}/book/find-all/http-request.adoc[]
 include::{snippets}/book/find-all/http-response.adoc[]
 
 === Find a specific book
-A `GET` request returning a specific book.
+A GET request returning a specific book.
 
 ==== Method and path
-*GET /books/{isbn}*
+GET /books/{isbn}
 
 ==== Path parameters
 include::{snippets}/book/find-one/path-parameters.adoc[]
@@ -47,10 +47,10 @@ include::{snippets}/book/find-one/http-request.adoc[]
 include::{snippets}/book/find-one/http-response.adoc[]
 
 === Insert a new book
-A `POST` request inserting a new book.
+A POST request inserting a new book.
 
 ==== Method and path
-*POST /books*
+POST /books
 
 ==== Request payload
 The request payload represents an object of type <<resources-book-insert,book-insert>>.
@@ -71,10 +71,10 @@ include::{snippets}/book/insert/http-request.adoc[]
 include::{snippets}/book/insert/http-response.adoc[]
 
 === Delete an existing book
-A `DELETE` request deleting an existing book.
+A DELETE request deleting an existing book.
 
 ==== Method and path
-*DELETE /books/{isbn}*
+DELETE /books/{isbn}
 
 ==== Path parameters
 include::{snippets}/book/delete/path-parameters.adoc[]
