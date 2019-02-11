@@ -1,5 +1,7 @@
 package com.github.ingogriebsch.sample.spring.restdocs.restcontroller;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class BookInsert {
 
-    @NotBlank
+    @Pattern(regexp = "[0-9]{10}")
     private String isbn;
     @NotBlank
     private String title;

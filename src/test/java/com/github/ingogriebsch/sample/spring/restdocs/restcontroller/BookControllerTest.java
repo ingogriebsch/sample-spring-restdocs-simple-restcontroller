@@ -118,7 +118,7 @@ public class BookControllerTest {
 
     @Test
     public void insert_should_return_status_created_if_not_known() throws Exception {
-        BookInsert bookInsert = new BookInsert("9781451673319", "Fahrenheit 451");
+        BookInsert bookInsert = new BookInsert(randomNumeric(10), "Fahrenheit 451");
         Book book = new Book(bookInsert.getIsbn(), bookInsert.getTitle());
         given(bookService.insert(bookInsert)).willReturn(of(book));
 
@@ -134,7 +134,7 @@ public class BookControllerTest {
 
     @Test
     public void insert_should_return_status_bad_request_if_already_known() throws Exception {
-        BookInsert bookInsert = new BookInsert("9781451673319", "Fahrenheit 451");
+        BookInsert bookInsert = new BookInsert(randomNumeric(10), "Fahrenheit 451");
         given(bookService.insert(bookInsert)).willReturn(empty());
 
         String content = objectMapper.writeValueAsString(bookInsert);

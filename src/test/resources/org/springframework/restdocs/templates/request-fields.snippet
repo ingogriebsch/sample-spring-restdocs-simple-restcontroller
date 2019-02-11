@@ -1,0 +1,12 @@
+// Based on the default file 'default-request-fields.snippet located in package 'org.springframework.restdocs.templates.asciidoctor in jar 'org.springframework.restdocs:spring-restdocs-core'.
+|===
+|Path|Type|Description|Constraints
+
+{{#fields}}
+|{{#tableCellContent}}`+{{path}}+`{{/tableCellContent}}
+|{{#tableCellContent}}`+{{type}}+`{{/tableCellContent}}
+|{{#tableCellContent}}{{description}}{{/tableCellContent}}
+|{{#tableCellContent}}{{constraints}}{{/tableCellContent}}
+
+{{/fields}}
+|===

@@ -6,6 +6,8 @@ import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.Book
 import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.BookController.PATH_INSERT;
 import static com.google.common.collect.Sets.newHashSet;
 import static java.util.Optional.of;
+import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.StringUtils.join;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.http.HttpHeaders.ACCEPT;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
@@ -25,6 +27,7 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.requestF
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
 import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
+import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
@@ -38,6 +41,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.restdocs.JUnitRestDocumentation;
+import org.springframework.restdocs.constraints.ConstraintDescriptions;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
 import org.springframework.restdocs.snippet.Snippet;
@@ -158,8 +162,13 @@ public class BookControllerDoc {
             mockMvc.perform(post(PATH_INSERT).content(content).contentType(APPLICATION_JSON_UTF8).accept(APPLICATION_JSON_UTF8));
         actions.andExpect(status().isCreated());
 
-        Snippet requestFields = requestFields(fieldWithPath("isbn").description("The isbn of the book."),
-            fieldWithPath("title").description("The title of the book."));
+        ConstraintDescriptions bookInsertConstraintDescriptions = new ConstraintDescriptions(BookInsert.class);
+
+        Snippet requestFields = requestFields(
+            fieldWithPath("isbn").description("The isbn of the book.")
+                .attributes(key("constraints").value(contraintsValue("isbn", bookInsertConstraintDescriptions))),
+            fieldWithPath("title").description("The title of the book.")
+                .attributes(key("constraints").value(contraintsValue("title", bookInsertConstraintDescriptions))));
 
         actions.andDo(documentationHandler.document(requestFields));
     }
@@ -176,6 +185,10 @@ public class BookControllerDoc {
             fieldWithPath("title").description("The title of the book."));
 
         actions.andDo(documentationHandler.document(responseFields));
+    }
+
+    private static String contraintsValue(String key, ConstraintDescriptions constraintsDescriptions) {
+        return join(constraintsDescriptions.descriptionsForProperty(key).stream().map(s -> s + ".").collect(toList()), " ");
     }
 
     private static Book book(BookInsert bookInsert) {
