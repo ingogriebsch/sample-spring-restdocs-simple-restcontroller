@@ -8,6 +8,11 @@
 
 [preface]
 = Introduction
-This sample shows you how to implement document a simple REST controller with Spring REST Docs (and Spring Boot).
+This sample shows you how to document a simple REST controller with Spring REST Docs (and Spring Boot).
 
-include::api-doc.adoc[]
+[[api-doc]]
+= API documentation
+The following section describes the public REST API which is available through this service.
+include::overview/index.adoc[]
+include::endpoints/index.adoc[]
+include::resources/index.adoc[]

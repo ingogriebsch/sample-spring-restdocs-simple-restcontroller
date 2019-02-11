@@ -1,5 +1,0 @@
-[[api-doc]]
-= Api documentation
-The following section contains a description about every REST endpoint which is available through this service.
-include::endpoints/endpoints.adoc[]
-include::resources/resources.adoc[]

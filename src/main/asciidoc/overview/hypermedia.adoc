@@ -1,0 +1,4 @@
+[[overview-hypermedia]]
+=== Hypermedia
+This service is currently implementing maturity level 2 (based on the https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]). 
+Means it is currently not implementing hypermedia support through the API.

@@ -1,5 +1,6 @@
 [[endpoints]]
 == Endpoints
+The following section describes all available REST endpoints provided by this service.
 
 === Find all available books
 A GET request returning all available books.

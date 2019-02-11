@@ -1,0 +1,17 @@
+[[overview-http-verbs]]
+=== HTTP verbs
+
+This service tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===

@@ -1,5 +1,6 @@
 [[resources]]
 == Resources
+The following section describes all resources which are accessible through the <<endpoints,endpoints>> provided by this service.
 
 [[resources-book-insert]]
 === Book insert
