@@ -23,7 +23,7 @@
     <packaging>jar</packaging>
 
     <name>Spring REST Docs simple REST controller sample</name>
-    <description>This sample shows you how to implement document a simple REST controller with Spring REST Docs (and Spring Boot)</description>
+    <description>This sample shows you how to document a simple REST controller with Spring REST Docs (and Spring Boot)</description>
     <url>https://github.com/ingogriebsch/sample-spring-restdocs-simple-restcontroller</url>
     <inceptionYear>2019</inceptionYear>
     <organization />
@@ -137,6 +137,7 @@
                     <backend>html5</backend>
                     <doctype>book</doctype>
                     <preserveDirectories>true</preserveDirectories>
+                    <relativeBaseDir>true</relativeBaseDir>
                 </configuration>
                 <executions>
                     <execution>
