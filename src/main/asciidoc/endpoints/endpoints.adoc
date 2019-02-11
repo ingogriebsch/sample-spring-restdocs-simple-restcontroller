@@ -4,7 +4,7 @@
 === Find all available books
 A `GET` request returning all available books.
 
-==== Path pattern
+==== Method and path
 *GET /books*
 
 ==== Request headers
@@ -25,7 +25,7 @@ include::{snippets}/book/find-all/http-response.adoc[]
 === Find a specific book
 A `GET` request returning a specific book.
 
-==== Path pattern
+==== Method and path
 *GET /books/{isbn}*
 
 ==== Path parameters
@@ -49,7 +49,7 @@ include::{snippets}/book/find-one/http-response.adoc[]
 === Insert a new book
 A `POST` request inserting a new book.
 
-==== Path pattern
+==== Method and path
 *POST /books*
 
 ==== Request payload
@@ -73,7 +73,7 @@ include::{snippets}/book/insert/http-response.adoc[]
 === Delete an existing book
 A `DELETE` request deleting an existing book.
 
-==== Path pattern
+==== Method and path
 *DELETE /books/{isbn}*
 
 ==== Path parameters
