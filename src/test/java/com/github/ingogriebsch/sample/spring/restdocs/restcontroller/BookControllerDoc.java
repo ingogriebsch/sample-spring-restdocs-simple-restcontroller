@@ -108,7 +108,7 @@ public class BookControllerDoc {
         ResultActions actions = mockMvc.perform(get(PATH_FIND_ONE, book.getIsbn()).accept(APPLICATION_JSON_UTF8));
         actions.andExpect(status().isOk());
 
-        Snippet pathParameters = pathParameters(parameterWithName("isbn").description("The isbn of the book."));
+        Snippet pathParameters = pathParameters(parameterWithName("isbn").description("The isbn of the requested book."));
 
         Snippet requestHeaders =
             requestHeaders(headerWithName(ACCEPT).description("The content type the client is able to understand."));
@@ -147,7 +147,7 @@ public class BookControllerDoc {
         ResultActions actions = mockMvc.perform(RestDocumentationRequestBuilders.delete(PATH_DELETE, isbn));
         actions.andExpect(status().isOk());
 
-        Snippet pathParameters = pathParameters(parameterWithName("isbn").description("The isbn of the book."));
+        Snippet pathParameters = pathParameters(parameterWithName("isbn").description("The isbn of the book to be deleted."));
 
         actions.andDo(documentationHandler.document(pathParameters));
     }
