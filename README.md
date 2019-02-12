@@ -6,7 +6,7 @@
 [![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-restdocs-simple-restcontroller/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-This sample shows you how to document a simple REST controller with Spring REST Docs (and Spring Boot).
+This sample shows you how to document a simple REST controller with Spring REST Docs.
 
 If you are starting up the service it is available under <http://localhost:8080>.
 The generated REST documentation can be accessed through <http://localhost:8080/docs/index.html>.

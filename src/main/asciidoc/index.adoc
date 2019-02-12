@@ -8,7 +8,7 @@
 
 [preface]
 = Introduction
-This sample shows you how to document a simple REST controller with Spring REST Docs (and Spring Boot).
+This sample shows you how to document a simple REST controller with Spring REST Docs.
 
 [[api-doc]]
 = API documentation
