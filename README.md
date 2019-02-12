@@ -8,8 +8,18 @@
 
 This sample shows you how to document a simple REST controller with Spring REST Docs.
 
-If you are starting up the service it is available under <http://localhost:8080>.
-The generated REST documentation can be accessed through <http://localhost:8080/docs/index.html>.
+This service is written using Spring Boot which makes it easy to get it up and running so that you can start exploring the REST API and their documentation.
+After you started up the service, this page is available under <http://localhost:8080>. 
+The documentation explaining the REST API implemented through this service is available under <http://localhost:8080/docs/index.html>.
+
+If you want to test the REST API, you can simply use [Postman](https://www.getpostman.com/), [curl](https://curl.haxx.se/) or another HTTP client to execute some requests against this service. 
+The necessary input to successfully execute a request and what you can expect as output is explained through the REST API documentation. 
+
+The service uses Spring REST Docs to document the public REST API. 
+The API is implemented through class [BookController](https://github.com/ingogriebsch/sample-spring-restdocs-simple-restcontroller/blob/master/src/main/java/com/github/ingogriebsch/sample/spring/restdocs/restcontroller/BookController.java).
+Class [BookControllerDoc](https://github.com/ingogriebsch/sample-spring-restdocs-simple-restcontroller/blob/master/src/test/java/com/github/ingogriebsch/sample/spring/restdocs/restcontroller/BookControllerDoc.java) is using the Spring REST Docs framework to implement tests which are generating a set of snippets.
+These snippets are used as includes to complete the documentation located under [src/main/asciidoc](https://github.com/ingogriebsch/sample-spring-restdocs-simple-restcontroller/tree/master/src/main/asciidoc).
+The build process defined in the [pom.xml](https://github.com/ingogriebsch/sample-spring-restdocs-simple-restcontroller/blob/master/pom.xml) generates the resulting html files which are then copied into the static content service folder to be available during runtime.  
 
 ## Used frameworks
 Collection of the mainly used frameworks in this project. There are more, but they are not that present inside the main use case therefore they are not listed here.
