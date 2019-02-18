@@ -19,7 +19,7 @@
     </parent>
 
     <groupId>com.github.ingogriebsch.samples</groupId>
-    <artifactId>spring-restdocs-simple-restcontroller</artifactId>
+    <artifactId>sample-spring-restdocs-simple-restcontroller</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
