@@ -1,12 +1,13 @@
 package com.github.ingogriebsch.sample.spring.restdocs.restcontroller;
 
+import static java.util.Optional.of;
+import static java.util.stream.Collectors.toList;
+
 import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.BookController.PATH_DELETE;
 import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.BookController.PATH_FIND_ALL;
 import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.BookController.PATH_FIND_ONE;
 import static com.github.ingogriebsch.sample.spring.restdocs.restcontroller.BookController.PATH_INSERT;
 import static com.google.common.collect.Sets.newHashSet;
-import static java.util.Optional.of;
-import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.http.HttpHeaders.ACCEPT;
@@ -33,6 +34,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 import java.util.Set;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -49,8 +52,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.web.context.WebApplicationContext;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = BookController.class)

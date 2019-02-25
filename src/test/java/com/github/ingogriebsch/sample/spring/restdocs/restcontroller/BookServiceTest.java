@@ -9,8 +9,9 @@
  */
 package com.github.ingogriebsch.sample.spring.restdocs.restcontroller;
 
-import static com.google.common.collect.Sets.newHashSet;
 import static java.util.UUID.randomUUID;
+
+import static com.google.common.collect.Sets.newHashSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
