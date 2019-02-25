@@ -56,6 +56,7 @@
         <spring-restdocs.version>1.2.6.RELEASE</spring-restdocs.version>
         <asciidoctor-maven-plugin.version>1.5.6</asciidoctor-maven-plugin.version>
         <license-maven-plugin.version>1.17</license-maven-plugin.version>
+        <tidy-maven-plugin.version>1.1.0</tidy-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -112,6 +113,20 @@
             </resource>
         </resources>
         <plugins>
+            <plugin><!-- http://www.mojohaus.org/tidy-maven-plugin/ -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tidy-maven-plugin</artifactId>
+                <version>${tidy-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-check</id>                        
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin><!-- https://code.revelc.net/impsort-maven-plugin -->
                 <groupId>net.revelc.code</groupId>
                 <artifactId>impsort-maven-plugin</artifactId>
@@ -361,6 +376,19 @@
                                                 <goals>
                                                     <goal>check-file-header</goal>
                                                     <goal>update-file-header</goal>
+                                                </goals>
+                                            </pluginExecutionFilter>
+                                            <action>
+                                                <execute />
+                                            </action>
+                                        </pluginExecution>
+                                        <pluginExecution>
+                                            <pluginExecutionFilter>
+                                                <groupId>org.codehaus.mojo</groupId>
+                                                <artifactId>tidy-maven-plugin</artifactId>
+                                                <versionRange>[${tidy-maven-plugin.version},)</versionRange>
+                                                <goals>
+                                                    <goal>check</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
