@@ -52,11 +52,11 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.plugin.asciidoctor-maven-plugin.version>1.5.6</project.plugin.asciidoctor-maven-plugin.version>
+        <project.plugin.license-maven-plugin.version>1.17</project.plugin.license-maven-plugin.version>
+        <project.plugin.tidy-maven-plugin.version>1.1.0</project.plugin.tidy-maven-plugin.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-restdocs.version>1.2.6.RELEASE</spring-restdocs.version>
-        <asciidoctor-maven-plugin.version>1.5.6</asciidoctor-maven-plugin.version>
-        <license-maven-plugin.version>1.17</license-maven-plugin.version>
-        <tidy-maven-plugin.version>1.1.0</tidy-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -116,7 +116,7 @@
             <plugin><!-- http://www.mojohaus.org/tidy-maven-plugin/ -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>tidy-maven-plugin</artifactId>
-                <version>${tidy-maven-plugin.version}</version>
+                <version>${project.plugin.tidy-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-check</id>                        
@@ -148,7 +148,7 @@
             <plugin><!-- https://www.mojohaus.org/license-maven-plugin -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>${license-maven-plugin.version}</version>
+                <version>${project.plugin.license-maven-plugin.version}</version>
                 <configuration>
                     <addJavaLicenseAfterPackage>>false</addJavaLicenseAfterPackage>
                     <failOnMissingHeader>true</failOnMissingHeader>
@@ -200,7 +200,7 @@
             <plugin><!-- http://asciidoctor.org/docs/asciidoctor-maven-plugin/ -->
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>${asciidoctor-maven-plugin.version}</version>
+                <version>${project.plugin.asciidoctor-maven-plugin.version}</version>
                 <configuration>
                     <attributes>
                         <project-version>${project.version}</project-version>
@@ -359,7 +359,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>org.asciidoctor</groupId>
                                                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                                                <versionRange>[${asciidoctor-maven-plugin.version},)</versionRange>
+                                                <versionRange>[${project.plugin.asciidoctor-maven-plugin.version},)</versionRange>
                                                 <goals>
                                                     <goal>process-asciidoc</goal>
                                                 </goals>
@@ -372,7 +372,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>org.codehaus.mojo</groupId>
                                                 <artifactId>license-maven-plugin</artifactId>
-                                                <versionRange>[${license-maven-plugin.version},)</versionRange>
+                                                <versionRange>[${project.plugin.license-maven-plugin.version},)</versionRange>
                                                 <goals>
                                                     <goal>check-file-header</goal>
                                                     <goal>update-file-header</goal>
@@ -386,7 +386,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>org.codehaus.mojo</groupId>
                                                 <artifactId>tidy-maven-plugin</artifactId>
-                                                <versionRange>[${tidy-maven-plugin.version},)</versionRange>
+                                                <versionRange>[${project.plugin.tidy-maven-plugin.version},)</versionRange>
                                                 <goals>
                                                     <goal>check</goal>
                                                 </goals>
