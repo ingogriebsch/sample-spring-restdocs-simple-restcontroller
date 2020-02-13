@@ -52,9 +52,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.plugin.asciidoctor-maven-plugin.version>1.5.6</project.plugin.asciidoctor-maven-plugin.version>
-        <project.plugin.license-maven-plugin.version>1.17</project.plugin.license-maven-plugin.version>
-        <project.plugin.tidy-maven-plugin.version>1.1.0</project.plugin.tidy-maven-plugin.version>
+        <project.plugin.copy-rename-maven-plugin.version>1.0.1</project.plugin.copy-rename-maven-plugin.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-restdocs.version>1.2.6.RELEASE</spring-restdocs.version>
     </properties>
@@ -116,14 +114,13 @@
             <plugin><!-- http://www.mojohaus.org/tidy-maven-plugin/ -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>tidy-maven-plugin</artifactId>
-                <version>${project.plugin.tidy-maven-plugin.version}</version>
+                <version>1.1.0</version>
                 <executions>
                     <execution>
                         <id>default-check</id>                        
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <phase>validate</phase>
                     </execution>
                 </executions>
             </plugin>
@@ -148,7 +145,7 @@
             <plugin><!-- https://www.mojohaus.org/license-maven-plugin -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>${project.plugin.license-maven-plugin.version}</version>
+                <version>1.17</version>
                 <configuration>
                     <addJavaLicenseAfterPackage>>false</addJavaLicenseAfterPackage>
                     <failOnMissingHeader>true</failOnMissingHeader>
@@ -200,7 +197,7 @@
             <plugin><!-- http://asciidoctor.org/docs/asciidoctor-maven-plugin/ -->
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>${project.plugin.asciidoctor-maven-plugin.version}</version>
+                <version>1.5.6</version>
                 <configuration>
                     <attributes>
                         <project-version>${project.version}</project-version>
@@ -269,7 +266,7 @@
             <plugin><!-- https://coderplus.github.io/copy-rename-maven-plugin -->
                 <groupId>com.coderplus.maven.plugins</groupId>
                 <artifactId>copy-rename-maven-plugin</artifactId>
-                <version>1.0</version>
+                <version>${project.plugin.copy-rename-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>prepare-package</phase>
@@ -286,20 +283,6 @@
             <plugin><!-- https://docs.spring.io/spring-boot/docs/1.15.19.RELEASE/maven-plugin -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build-info</goal>
-                        </goals>
-                        <configuration>
-                            <additionalProperties>
-                                <source.encoding>${project.build.sourceEncoding}</source.encoding>
-                                <java.source>${maven.compiler.source}</java.source>
-                                <java.target>${maven.compiler.target}</java.target>
-                            </additionalProperties>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -357,42 +340,28 @@
                                     <pluginExecutions>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
-                                                <groupId>org.asciidoctor</groupId>
-                                                <artifactId>asciidoctor-maven-plugin</artifactId>
-                                                <versionRange>[${project.plugin.asciidoctor-maven-plugin.version},)</versionRange>
+                                                <groupId>org.apache.maven.plugins</groupId>
+                                                <artifactId>maven-resources-plugin</artifactId>
+                                                <versionRange>[${maven-resources-plugin.version},)</versionRange>
                                                 <goals>
-                                                    <goal>process-asciidoc</goal>
+                                                    <goal>copy-resources</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <execute />
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                         <pluginExecution>
                                             <pluginExecutionFilter>
-                                                <groupId>org.codehaus.mojo</groupId>
-                                                <artifactId>license-maven-plugin</artifactId>
-                                                <versionRange>[${project.plugin.license-maven-plugin.version},)</versionRange>
+                                                <groupId>com.coderplus.maven.plugins</groupId>
+                                                <artifactId>copy-rename-maven-plugin</artifactId>
+                                                <versionRange>[${project.plugin.copy-rename-maven-plugin.version},)</versionRange>
                                                 <goals>
-                                                    <goal>check-file-header</goal>
-                                                    <goal>update-file-header</goal>
+                                                    <goal>copy</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
                                             <action>
-                                                <execute />
-                                            </action>
-                                        </pluginExecution>
-                                        <pluginExecution>
-                                            <pluginExecutionFilter>
-                                                <groupId>org.codehaus.mojo</groupId>
-                                                <artifactId>tidy-maven-plugin</artifactId>
-                                                <versionRange>[${project.plugin.tidy-maven-plugin.version},)</versionRange>
-                                                <goals>
-                                                    <goal>check</goal>
-                                                </goals>
-                                            </pluginExecutionFilter>
-                                            <action>
-                                                <execute />
+                                                <ignore />
                                             </action>
                                         </pluginExecution>
                                     </pluginExecutions>
