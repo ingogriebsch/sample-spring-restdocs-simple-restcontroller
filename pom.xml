@@ -130,7 +130,7 @@
                 <version>1.2.0</version>
                 <configuration>
                     <staticGroups>java.,javax.,*</staticGroups>
-                    <groups>java.,javax.,com.,org.,*</groups>
+                    <groups>java.,javax.,*</groups>
                 </configuration>
                 <executions>
                     <execution>
