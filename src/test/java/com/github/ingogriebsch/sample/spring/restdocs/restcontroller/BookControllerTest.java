@@ -46,7 +46,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.Set;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;

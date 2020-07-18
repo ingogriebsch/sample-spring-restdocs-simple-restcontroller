@@ -21,11 +21,10 @@ package com.github.ingogriebsch.sample.spring.restdocs.restcontroller;
 
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
